@@ -27,13 +27,13 @@ jobs:
         run: dotnet build ./MyWebApp/MyWebApp.csproj --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish ./MyWebApp/MyWebApp.csproj -c Release -o "C:\Projects\Publish" 
+        run: dotnet publish ./MyWebApp/MyWebApp.csproj -c Release -o "C:/Projects/Publish" 
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
-          path: "C:\Projects\Publish"
+          path: "C:/Projects/Publish"
 
   deploy:
     runs-on: windows-latest
